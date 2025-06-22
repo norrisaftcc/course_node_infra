@@ -1,0 +1,41 @@
+{
+  "name": "week-04-realtime-systems",
+  "version": "1.0.0",
+  "description": "Week 4: Real-time Systems & WebSocket Communication - AlgoCratic Futures Corporate Real-time Infrastructure",
+  "main": "sample-code/websocket-server.js",
+  "scripts": {
+    "dev": "node sample-code/websocket-server.js",
+    "demo": "node sample-code/realtime-demo.js",
+    "test": "node exercises/realtime-exercise.js",
+    "lint": "eslint sample-code/ exercises/ --fix",
+    "client": "node sample-code/websocket-client.js",
+    "dashboard": "node sample-code/realtime-dashboard.js",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "websockets",
+    "real-time",
+    "server-sent-events",
+    "socket.io",
+    "node.js",
+    "distributed-systems",
+    "corporate-infrastructure"
+  ],
+  "author": "AlgoCratic Futures Educational Framework",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.16.0",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
