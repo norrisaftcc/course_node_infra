@@ -1,58 +1,76 @@
 #!/usr/bin/env node
 
 /**
- * WEEK 1 DEMONSTRATION: The Blocking Problem
+ * 🏢 ALGOCRATIC FUTURES: WEEK 1 DEMONSTRATION
+ * "The Great Algorithmic Recalibration: Blocking Protocol Failures"
  * 
- * This script demonstrates why synchronous operations
- * are problematic in Node.js and web servers.
+ * CORPORATE MEMO: Our enterprise-grade productivity optimization systems
+ * are experiencing "synchronous degradation events" that require immediate
+ * algorithmic recalibration. This demonstration reveals why our legacy
+ * blocking protocols are causing system-wide productivity bottlenecks.
  * 
- * Students will see the server "freeze" during file operations.
+ * 🎯 PEDAGOGICAL PURPOSE: Students experience the frustration of blocking
+ * operations before discovering async solutions - mirroring real corporate
+ * "digital transformation challenges" they'll face in their careers.
+ * 
+ * ⚠️  WARNING: This server will exhibit "algorithmic dysfunction" by design.
+ * Students will witness requests queuing behind slow operations, creating
+ * authentic pain points that async patterns will eventually resolve.
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-// Create some dummy data to simulate slow operations
-const DUMMY_DATA = 'x'.repeat(1000000); // 1MB of data
+// 📊 ALGOCRATIC PRODUCTIVITY DATA: Simulating enterprise-scale document processing
+// Our "Synergy Enhancement Matrices" (1MB each) represent typical corporate workloads
+const PRODUCTIVITY_MATRIX = 'x'.repeat(1000000); // 1MB of "productivity data"
 
-// Write test files if they don't exist
-const testFile1 = path.join(__dirname, 'test-file-1.txt');
-const testFile2 = path.join(__dirname, 'test-file-2.txt');
+// 🗂️  CORPORATE FILING SYSTEM: Legacy document repositories
+const legacyDocument1 = path.join(__dirname, 'productivity-matrix-alpha.txt');
+const legacyDocument2 = path.join(__dirname, 'productivity-matrix-beta.txt');
 
-if (!fs.existsSync(testFile1)) {
-    fs.writeFileSync(testFile1, DUMMY_DATA);
+// 🏗️  INITIALIZING CORPORATE INFRASTRUCTURE: Setting up productivity matrices
+if (!fs.existsSync(legacyDocument1)) {
+    console.log('📁 Deploying Productivity Matrix Alpha to corporate filing system...');
+    fs.writeFileSync(legacyDocument1, PRODUCTIVITY_MATRIX);
 }
-if (!fs.existsSync(testFile2)) {
-    fs.writeFileSync(testFile2, DUMMY_DATA);
+if (!fs.existsSync(legacyDocument2)) {
+    console.log('📁 Deploying Productivity Matrix Beta to corporate filing system...');
+    fs.writeFileSync(legacyDocument2, PRODUCTIVITY_MATRIX);
 }
 
-// PROBLEMATIC: Synchronous server that blocks
+// 🔥 CRITICAL SYSTEM FLAW: Legacy Synchronous Protocol Implementation
+// WARNING: This server demonstrates "algorithmic dysfunction" by design!
 const server = http.createServer((req, res) => {
-    console.log(`[${new Date().toISOString()}] Request received: ${req.url}`);
+    console.log(`[${new Date().toISOString()}] 📨 CORPORATE REQUEST RECEIVED: ${req.url}`);
     
-    if (req.url === '/slow-operation') {
-        // THIS BLOCKS THE ENTIRE SERVER
-        console.log('Starting synchronous file operations...');
+    if (req.url === '/process-productivity-data') {
+        // 🚨 ALGORITHMIC BOTTLENECK: Synchronous operations causing enterprise-wide delays
+        console.log('⚙️  INITIATING PRODUCTIVITY MATRIX ANALYSIS (Legacy Blocking Protocol)...');
+        console.log('💼 CORPORATE NOTICE: All other operations will be delayed during this process');
         
-        const data1 = fs.readFileSync(testFile1, 'utf8');
-        console.log('File 1 read complete');
+        const productivityData1 = fs.readFileSync(legacyDocument1, 'utf8');
+        console.log('✅ Productivity Matrix Alpha processed (but at what cost to efficiency?)');
         
-        const data2 = fs.readFileSync(testFile2, 'utf8');
-        console.log('File 2 read complete');
+        const productivityData2 = fs.readFileSync(legacyDocument2, 'utf8');
+        console.log('✅ Productivity Matrix Beta processed (efficiency metrics declining...)');
         
-        // Simulate additional processing time
+        // 🐌 CORPORATE ALGORITHMIC RECALIBRATION: CPU-intensive legacy protocol
+        console.log('🔄 Executing enterprise synergy calculations (this will hurt performance)...');
         const start = Date.now();
         while (Date.now() - start < 2000) {
-            // Busy wait for 2 seconds - TERRIBLE for servers!
+            // 💸 BURNING CPU CYCLES: Simulating legacy enterprise "optimization" algorithms
+            // This blocking loop prevents ALL other requests from being processed!
         }
         
         res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end(`Processed ${data1.length + data2.length} characters\n`);
+        res.end(`🏆 ALGORITHMIC RECALIBRATION COMPLETE!\n📊 Processed ${productivityData1.length + productivityData2.length} productivity units\n💼 WARNING: Corporate efficiency severely compromised during this operation!\n`);
         
-    } else if (req.url === '/health') {
+    } else if (req.url === '/corporate-health-check') {
+        // 🏥 QUICK CORPORATE WELLNESS CHECK: This should respond fast... unless blocked!
         res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end('Server is responding\n');
+        res.end('🟢 CORPORATE SYSTEM STATUS: Operational (unless algorithmic recalibration is running)\n');
         
     } else {
         res.writeHead(404, {'Content-Type': 'text/plain'});
@@ -62,11 +80,17 @@ const server = http.createServer((req, res) => {
 
 const PORT = 3000;
 server.listen(PORT, () => {
-    console.log(`🚨 BLOCKING SERVER running on port ${PORT}`);
+    console.log(`🏢 ALGOCRATIC FUTURES LEGACY SYSTEM active on port ${PORT}`);
     console.log('');
-    console.log('TRY THIS EXPERIMENT:');
-    console.log('1. Open multiple terminals');
-    console.log('2. In terminal 1: curl http://localhost:3000/slow-operation');
+    console.log('🧪 CORPORATE DYSFUNCTION EXPERIMENT:');
+    console.log('   Demonstrate the "productivity paradox" of blocking operations!');
+    console.log('');
+    console.log('👥 MULTI-USER SIMULATION:');
+    console.log('1. 📱 Terminal 1: curl http://localhost:3000/process-productivity-data');
+    console.log('2. 📱 Terminal 2: curl http://localhost:3000/corporate-health-check');
+    console.log('');
+    console.log('🎯 LEARNING OBJECTIVE: Watch Terminal 2 wait forever while Terminal 1 processes!');
+    console.log('💡 REVELATION: This is why async patterns are essential for enterprise systems!');
     console.log('3. IMMEDIATELY in terminal 2: curl http://localhost:3000/health');
     console.log('');
     console.log('OBSERVE: Terminal 2 will wait until terminal 1 completes!');
