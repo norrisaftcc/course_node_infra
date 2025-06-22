@@ -1,0 +1,32 @@
+{
+  "name": "week-02-service-coordination",
+  "version": "1.0.0",
+  "description": "Week 2: Service Coordination with Express.js and Multi-Service Patterns",
+  "main": "sample-code/coordination-server.js",
+  "scripts": {
+    "dev": "node sample-code/coordination-server.js",
+    "demo:multi-service": "node sample-code/multi-service-demo.js",
+    "demo:error-handling": "node sample-code/error-handling.js",
+    "demo:all": "npm run demo:multi-service && npm run demo:error-handling",
+    "test": "node exercises/test-runner.js",
+    "test:exercises": "node exercises/coordination-exercise.js",
+    "mcp:start": "node mcp-server/enhanced-course-mcp.js",
+    "mcp:test": "curl http://localhost:3002/generate-week-structure",
+    "services:start": "node sample-code/service-simulator.js",
+    "benchmark": "node sample-code/performance-comparison.js"
+  },
+  "keywords": ["nodejs", "express", "microservices", "coordination", "circuit-breaker", "education"],
+  "author": "Course Infrastructure Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
