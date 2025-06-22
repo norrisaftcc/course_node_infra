@@ -1,0 +1,19 @@
+{
+  "name": "week-01-async-basics",
+  "version": "1.0.0",
+  "description": "Week 1: Node.js Async Fundamentals + Course Development MCP Server",
+  "main": "sample-code/basic-server.js",
+  "scripts": {
+    "dev": "node sample-code/basic-server.js",
+    "demo:blocking": "node sample-code/blocking-demo.js",
+    "demo:async": "node sample-code/async-demo.js",
+    "test": "node exercises/test-runner.js",
+    "mcp:start": "node mcp-server/course-mcp.js",
+    "mcp:test": "curl http://localhost:3001/generate-content"
+  },
+  "keywords": ["nodejs", "async", "education", "mcp", "course-development"],
+  "author": "Course Infrastructure Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
