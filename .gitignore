@@ -1,0 +1,71 @@
+# Node.js dependencies and temporary files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package lock files (generated automatically)
+package-lock.json
+yarn.lock
+
+# Environment variables and local configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+out/
+
+# Docker and containerization
+.dockerignore
+docker-compose.override.yml
+
+# MacOS specific
+*.dSYM/
+
+# Course-specific temporary files
+**/demos/temp/
+**/exercises/temp/
+**/solutions/temp/
+*.backup
+
+# MCP server runtime files
+mcp-server/*.pid
+mcp-server/logs/
