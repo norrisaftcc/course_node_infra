@@ -1,0 +1,30 @@
+{
+  "name": "week-03-event-driven",
+  "version": "1.0.0",
+  "description": "Week 3: Event-Driven Architecture with Node.js EventEmitter, Streams, and Message Queues",
+  "main": "sample-code/event-emitter-demo.js",
+  "scripts": {
+    "dev": "node sample-code/event-emitter-demo.js",
+    "demo:events": "node sample-code/event-emitter-demo.js",
+    "demo:streams": "node sample-code/stream-processing.js",
+    "demo:pubsub": "node sample-code/pub-sub-system.js",
+    "demo:queues": "node sample-code/message-queue-patterns.js",
+    "demo:all": "npm run demo:events && npm run demo:streams && npm run demo:pubsub",
+    "test": "node exercises/test-runner.js",
+    "test:events": "node exercises/event-driven-exercise.js",
+    "test:streams": "node exercises/stream-exercise.js",
+    "benchmark": "node sample-code/event-performance-comparison.js"
+  },
+  "keywords": ["nodejs", "events", "streams", "pub-sub", "message-queues", "event-driven", "education"],
+  "author": "AlgoCratic Futures Education Team",
+  "license": "MIT",
+  "dependencies": {
+    "events": "^3.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
